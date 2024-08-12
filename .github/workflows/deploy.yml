@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and Deploy
         env:
-          ECS_HOST: ${{ secrets.8.138.154.135 }}
+          ECS_HOST: ${{ secrets.172.30.64.118 }}
           ECS_USER: ${{ secrets.root }}
           ECS_KEY: ${{ secrets.Li102210 }}
         run: |
@@ -31,7 +31,7 @@ jobs:
           chmod 600 privatekey
 
           # Use SCP to copy the files to the ECS instance
-          scp -r -i privatekey -o StrictHostKeyChecking=no ./* $root@$8.138.154.135:/var/www/html
+          scp -r -i privatekey -o StrictHostKeyChecking=no ./* $root@$172.30.64.118:/var/www/html
 
           # Clean up the temporary file
           rm privatekey
